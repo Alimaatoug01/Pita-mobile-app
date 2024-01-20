@@ -11,9 +11,16 @@ import UserPets from "./component/UserPets";
 import UserInfo from "./component/UserInfo";
 import user from '../../assets/user.jpg'
 import Navbar from "../Home/Components/Navbar";
+import { useSelector } from "react-redux";
 
 const { width, height } = Dimensions.get("screen");
 const UserProfile: React.FC = () => {
+
+  const user =  useSelector((state: RootState) => state.user.userData); 
+  console.log("userEmail in profile", user.pets);
+  
+
+
   return (
     <View style={styles.container}>
     <ScrollView>

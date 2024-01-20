@@ -1,14 +1,22 @@
-import React from 'react';
-import { ScrollView, View, Text,StyleSheet ,Dimensions} from 'react-native';
+import React, {useEffect} from 'react';
+import { ScrollView, View, Text,StyleSheet ,Dimensions , TouchableOpacity} from 'react-native';
 import  LostAndFound from "./Components/LostAndFound"
 import Carosel from "./Components/Carosel"
 import Publicite from "./Components/Publicité"
 import Adoptation from './Components/Adoptation';
-// import Navbar from "./Components/Navbar"
+import { useSelector, useDispatch } from 'react-redux';
+import { updateUserData } from '../../lib/redux/user/userSlice';
+import { AppDispatch } from '../../lib/redux/store';
+
 
 const { width, height } = Dimensions.get('screen')
 
+
 const Home: React.FC = (): React.ReactElement => {
+
+    
+    
+
 
     return (
         <ScrollView >

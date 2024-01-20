@@ -6,3 +6,10 @@ declare module '*.png' {
     const value: any;
     export default value;
   }
+
+
+  interface RootState {
+    user: {
+      userData: any;
+    };
+  }

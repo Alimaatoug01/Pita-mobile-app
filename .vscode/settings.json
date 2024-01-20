@@ -1,0 +1,19 @@
+{
+  "detectedConfig": {
+    "typescript": false,
+    "naming": "Pascal Case",
+    "unit": "em",
+    "framework": "react",
+    "styling": "'Inline Styles"
+  },
+  "locofyConfig": {
+    "project_name": "Petsapp",
+    "id": "659d77c7235773e798ae612b",
+    "framework": "react-native",
+    "typescript": true,
+    "path": "assets/",
+    "componentsPath": "c:\\Users\\Ali\\OneDrive\\Desktop\\Last one\\Pita-mobile-app\\client\\screens\\Adoptation\\Components",
+    "screensPath": "c:\\Users\\Ali\\OneDrive\\Desktop\\Last one\\Pita-mobile-app\\src\\pages",
+    "project_environment": "expo_go"
+  }
+}

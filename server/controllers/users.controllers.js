@@ -16,7 +16,7 @@ const AllUsers= async(req,res) => {
     }
 };
 const OneUser= async(req,res) => {
-    console.log(req.params);
+    // console.log(req.params);
     try {
     const result=await Users.findOne({where:{id:req.params.id}, include: Pets })
     res.json(result)   
@@ -49,14 +49,24 @@ const createUser =async (req, res) =>{
     }
   }
 
-const UpdateUser= async(req,res) => {
-    try {
-    const result=await Users.update(req.body,{where:req.params})
-    res.json(result)   
-    } catch (error) {
-    res.send(error)    
+const UpdateUser = async (req, res) => {
+  try {
+    const userId = req.params.id;
+
+    const result = await Users.update(req.body, { where: { id: userId } });
+
+    if (result[0] > 0) {
+      const updatedUser = await Users.findOne({ where: { id: userId }, include: Pets });
+
+      res.json(updatedUser);
+    } else {
+      res.json({ message: 'No user was updated.' });
     }
+  } catch (error) {
+    res.send(error);
+  }
 };
+
 
 const DeleteUser= async(req,res) => {
     try {

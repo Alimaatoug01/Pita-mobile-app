@@ -29,7 +29,7 @@ const generateToken = (id, fname) => {
   const Login = async(req, res) => {
     const{email,user_password}=req.body;
     try {
-         const result= await Users.findOne({ where :{email:email}})
+         const result= await Users.findOne({ where :{email:email},include: Pets })
          if(result ===null) res.send("email not found")
          else {
           const verif=result.dataValues.user_password

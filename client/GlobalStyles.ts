@@ -20,6 +20,7 @@ export const FontFamily = {
   robotoBold: "Roboto-Bold",
   interBold: "Inter-Bold",
   interSemiBold: "Inter-SemiBold",
+  poppins: "Poppins",
 };
 /* font sizes */
 export const FontSize = {

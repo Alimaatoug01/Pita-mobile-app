@@ -3,24 +3,17 @@ import { ScrollView, View, Text,StyleSheet ,Dimensions,Image,TouchableOpacity} f
 import logOut from '../../../assets/logout.png'
 import email from '../../../assets/email.png'
 import edit from '../../../assets/edit.png'
-import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
 
 
 const { width, height } = Dimensions.get('screen')
 const UserInfo: React.FC = () => {
-    const [hhh,setHhh]=useState([])
-    const getData=async()=>{
-        const result=await axios.get("http://localhost:3000/api/users/1")
-        setHhh(result.data);
-
-        
-    }
-
-    useEffect(()=>{
-        
-        getData()
-    },[])
-    console.log(hhh);
+    
+    const navigation = useNavigation()
+    
+    const handleEditPress = () => {
+        navigation.navigate('EditProfile' as never);
+      };
     
     return (
         <View style={styles.petContainer}>
@@ -36,7 +29,9 @@ const UserInfo: React.FC = () => {
                 <Image style={{width:width*0.055,height:height*0.0185}} source={email}></Image>
                 <Text>Exmple@gmail.com</Text>
             </View>
-            <TouchableOpacity><Image style={{width:width*0.08,height:height*0.035}} source={edit}></Image></TouchableOpacity>
+            <TouchableOpacity onPress={handleEditPress}>
+                <Image style={{width:width*0.08,height:height*0.035}} source={edit}></Image>
+                </TouchableOpacity>
             </View>
 
         </View>

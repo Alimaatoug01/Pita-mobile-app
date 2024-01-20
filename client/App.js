@@ -14,12 +14,19 @@ import Review from "./screens/Allvets/Components/AddRate"
 import Onevet from "./screens/Allvets/Components/Onevett";
 import Login from "./screens/authentification/Login/index.tsx"
 import Register from "./screens/authentification/Register/index.tsx"
+import { Provider } from 'react-redux';
+import store from "./lib/redux/store"; 
+import EditProfile from "./screens/UserProfile/component/EditProfile"
+
 const Stack = createNativeStackNavigator();
+
+// import EditUser
 
 export default function App() {
   return (
+    <Provider store={store} >
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Register">
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
         name="Home"
         component={Home} />
@@ -32,6 +39,8 @@ export default function App() {
         <Stack.Screen
         name="UserProfile"
         component={UserProfile} />
+        <Stack.Screen name="EditProfile" 
+        component={EditProfile} />
         <Stack.Screen
         name="Services"
         component={Services} />
@@ -58,6 +67,7 @@ export default function App() {
       </Stack.Navigator>
       <Navbar/>
     </NavigationContainer>
+    </Provider>
   );
 }
 
